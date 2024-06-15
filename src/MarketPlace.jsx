@@ -28,8 +28,7 @@ function MarketPlace() {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState(null);
-  let loading = true;
-  let error = null;
+  
 
   const handleChange = (field, value) => {
     setFilterValues((prevValues) => ({
@@ -78,18 +77,17 @@ function MarketPlace() {
                         },
                     }
                 );
-               console.log(response);
+               
                 setData(response?.data?.data?.products);
-                console.log("data",data);
-                loading = false;
+               
+               
             } catch (err) {
-                error = err;
-                loading = false;
+         console.log(err);
             }
         };
 
         fetchData();
-    }, []);
+    }, [filterValues]);
     const itemsPerPage = 4;
 
     if (!data || data.length === 0) {

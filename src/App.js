@@ -1,5 +1,4 @@
-import Footer from "./Footer";
-import Header from "./Header";
+
 import MarketPlace from "./MarketPlace";
 
 function App() {
